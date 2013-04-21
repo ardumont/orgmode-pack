@@ -48,7 +48,8 @@
    (ruby       . t)
    (perl       . t)
    (python     . t)
-   (R          . t)))
+   (R          . t)
+   (ditaa      . t)))
 
 (setq org-fontify-done-headline t)
 (custom-set-faces
