@@ -40,15 +40,15 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((haskell . t)
+ '((haskell    . t)
    (emacs-lisp . nil)
-   (sh . t)
-   (clojure . t)
-   (java . t)
-   (ruby . t)
-   (perl . t)
-   (python . t)
-   (R . t)))
+   (sh         . t)
+   (clojure    . t)
+   (java       . t)
+   (ruby       . t)
+   (perl       . t)
+   (python     . t)
+   (R          . t)))
 
 (setq org-fontify-done-headline t)
 (custom-set-faces
