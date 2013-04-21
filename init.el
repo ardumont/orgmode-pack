@@ -47,7 +47,8 @@
    (java . t)
    (ruby . t)
    (perl . t)
-   (python . t)))
+   (python . t)
+   (R . t)))
 
 (setq org-fontify-done-headline t)
 (custom-set-faces
