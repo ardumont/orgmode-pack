@@ -41,7 +41,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((haskell    . t)
-   (emacs-lisp . nil)
+   (emacs-lisp . t)
    (sh         . t)
    (clojure    . t)
    (java       . t)
