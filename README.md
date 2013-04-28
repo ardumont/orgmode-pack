@@ -8,5 +8,5 @@ Pack to setup org-mode.
 in your .emacs-live.el, add this:
 
 ```el
-(live-add-packs '(orgmode-pack))
+(live-add-packs '("/path/to/orgmode-pack"))
 ```
