@@ -1,3 +1,5 @@
+(install-packs '(org))
+
 ;; Some org-mode setup
 
 ;; org-mode for the .org file
