@@ -1,4 +1,4 @@
-(install-packs '(org))
+(install-packs '(org-ehtml))
 
 ;; Some org-mode setup
 
