@@ -1,5 +1,3 @@
-(install-packs '(org-ehtml))
-
 ;; Some org-mode setup
 
 ;; org-mode for the .org file
