@@ -86,5 +86,8 @@
 (defadvice kill-whole-line (after fix-cookies activate)
   (myorg-update-parent-cookie))
 
+;; deactivate git-gutter-mode when in org-mode
+(add-hook 'org-mode-hook (lambda () (git-gutter-mode 0)))
+
 ;; Load bindings config
 (live-load-config-file "bindings.el")
