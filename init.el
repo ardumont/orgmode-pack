@@ -14,27 +14,34 @@
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
-(setq org-tag-alist '(("howTo" . ?h)
-                      ("tech" . ?t)
-                      ("emacs" . ?e)
-                      ("orgMode" . ?o)
-                      ("faq" . ?f)
-                      ("firefox")
-                      ("conkeror")
-                      ("linux")))
+;; metadata tags for the task at end
+(setq org-tag-alist '(("howto"       . ?h)
+                      ("tech"        . ?t)
+                      ("emacs"       . ?e)
+                      ("orgmode"     . ?o)
+                      ("faq"         . ?F)
+                      ("linux"       . ?l)
+                      ("dev"         . ?d)
+                      ("clojure"     . ?c)
+                      ("elisp"       . ?E)
+                      ("common-lisp" . ?C)
+                      ("haskell"     . ?H)
+                      ("scala"       . ?s)
+                      ("devops"      . ?d)))
 
+;; keywords sequence for org-mode
 (setq org-todo-keywords
    '((sequence "TODO" "IN-PROGRESS" "PENDING" "|"  "DONE" "FAIL" "DELEGATED" "CANCELLED")))
 
-;; modifying the color
+;; modifying the color for the different keywords
 (setq org-todo-keyword-faces
-      '(("TODO"  . (:foreground "firebrick2" :weight bold))
-        ("IN-PROGRESS"  . (:foreground "olivedrab" :weight bold))
-        ("PENDING"  . (:foreground "sienna" :weight bold))
-        ("DONE"  . (:foreground "forestgreen" :weight bold))
-        ("DELEGATED"  . (:foreground "dimgrey" :weight bold))
-        ("FAILED"  . (:foreground "steelblue" :weight bold))
-        ("CANCELED"  . shadow)))
+      '(("TODO"        . (:foreground "firebrick2" :weight bold))
+        ("IN-PROGRESS" . (:foreground "olivedrab" :weight bold))
+        ("PENDING"     . (:foreground "sienna" :weight bold))
+        ("DONE"        . (:foreground "forestgreen" :weight bold))
+        ("DELEGATED"   . (:foreground "dimgrey" :weight bold))
+        ("FAILED"      . (:foreground "steelblue" :weight bold))
+        ("CANCELED"    . shadow)))
 
 ;; babel
 
