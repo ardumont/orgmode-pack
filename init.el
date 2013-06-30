@@ -2,7 +2,9 @@
 
 ;; org-mode for the .org file
 
-(add-to-list 'auto-mode-alist '("\.org$" . org-mode))
+(add-to-list 'auto-mode-alist '("\.org$"  . org-mode))
+(add-to-list 'auto-mode-alist '("\.todo$" . org-mode))
+(add-to-list 'auto-mode-alist '("\.note$" . org-mode))
 
 (column-number-mode)
 
