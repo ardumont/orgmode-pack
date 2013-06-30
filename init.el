@@ -14,6 +14,10 @@
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+;; export options
+(setq org-export-with-toc t)
+(setq org-export-headline-levels 4)
+
 ;; metadata tags for the task at end
 (setq org-tag-alist '(("howto"       . ?h)
                       ("tech"        . ?t)
