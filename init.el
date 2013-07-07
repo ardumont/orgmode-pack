@@ -1,3 +1,7 @@
+(install-packs '(org-trello))
+
+(require 'org-trello)
+
 ;; Some org-mode setup
 
 ;; org-mode for the .org file
