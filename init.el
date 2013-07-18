@@ -43,7 +43,7 @@
 (setq org-todo-keywords
    '((sequence "TODO" "IN-PROGRESS" "PENDING" "|"  "DONE" "FAIL" "DELEGATED" "CANCELLED")))
 
-;; modifying the color for the different keywords
+;; modifying the colonr for the different keywords
 (setq org-todo-keyword-faces
       '(("TODO"        . (:foreground "firebrick2" :weight bold))
         ("IN-PROGRESS" . (:foreground "olivedrab" :weight bold))
@@ -105,6 +105,23 @@
 
 ;; deactivate git-gutter-mode when in org-mode
 (add-hook 'org-mode-hook (lambda () (git-gutter-mode 0)))
+
+;;;;;;;;; Math setup
+
+;; there is trouble with the standard install so I use directly emacs-live's native api
+(live-add-pack-lib "ac-math")
+
+(require 'ac-math)
+
+;; adding the auto-complete mode to org
+(add-to-list 'ac-modes 'org-mode)
+
+(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
+  (setq ac-sources
+        (append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
+                ac-sources)))
+
+(add-hook 'org-mode-hook 'ac-latex-mode-setup)
 
 ;; Load bindings config
 (live-load-config-file "bindings.el")
