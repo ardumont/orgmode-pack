@@ -66,7 +66,8 @@
    (perl       . t)
    (python     . t)
    (R          . t)
-   (ditaa      . t)))
+   (ditaa      . t)
+   (lilypond   . t)))
 
 (setq org-fontify-done-headline t)
 (custom-set-faces
