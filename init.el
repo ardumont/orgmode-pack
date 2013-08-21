@@ -1,6 +1,10 @@
-(install-packs '(org-trello))
+(install-packs '(;; as i developed org-trello, i have systematic problem so remove it
+                 ;;                  org-trello
+                 ))
 
-(require 'org-trello)
+;; (require 'org-trello)
+;; (add-hook 'org-mode-hook
+;;           (lambda () (if org-trello-mode (auto-complete-mode 0))))
 
 ;; Some org-mode setup
 
