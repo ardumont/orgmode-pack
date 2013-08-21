@@ -41,7 +41,7 @@
 
 ;; keywords sequence for org-mode
 (setq org-todo-keywords
-   '((sequence "TODO" "IN-PROGRESS" "PENDING" "|"  "DONE" "FAIL" "DELEGATED" "CANCELLED")))
+   '((sequence "TODO(t)" "IN-PROGRESS(i)" "PENDING(p)" "|"  "DONE(d)" "FAIL(f)" "DELEGATED(e)" "CANCELLED(c)")))
 
 ;; modifying the colonr for the different keywords
 (setq org-todo-keyword-faces
