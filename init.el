@@ -55,7 +55,7 @@
         ("DONE"        . (:foreground "forestgreen" :weight bold))
         ("DELEGATED"   . (:foreground "dimgrey" :weight bold))
         ("FAILED"      . (:foreground "steelblue" :weight bold))
-        ("CANCELED"    . shadow)))
+        ("CANCELLED"   . shadow)))
 
 ;; babel
 
