@@ -114,7 +114,7 @@
 ;;;;;;;;; Math setup
 
 ;; there is trouble with the standard install so I use directly emacs-live's native api
-(live-add-pack-lib "ac-math")
+(load-file "lib/ac-math.el")
 
 (require 'ac-math)
 
