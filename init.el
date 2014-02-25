@@ -2,7 +2,6 @@
                  ;;                  org-trello
                  ))
 
-
 (require 'org)
 
 ;; (require 'org-trello)
