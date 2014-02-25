@@ -1,4 +1,4 @@
-(install-packs '(;; as i developed org-trello, i have systematic problems when developping so remove it
+(install-packs '(;; as i developed org-trello, i have systematic problems when developing so remove it
                  ;;                  org-trello
                  ))
 
