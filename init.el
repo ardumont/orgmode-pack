@@ -2,6 +2,9 @@
                  ;;                  org-trello
                  ))
 
+
+(require 'org)
+
 ;; (require 'org-trello)
 ;; (add-hook 'org-mode-hook
 ;;           (lambda () (if org-trello-mode (auto-complete-mode 0))))
