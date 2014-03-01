@@ -1,3 +1,9 @@
+;;; orgmode-pack.el --- org-mode configuration
+
+;;; Commentary:
+
+;;; Code:
+
 (install-packs '(;; as i developed org-trello, i have systematic problems when developing so remove it
                  ;;                  org-trello
                  ))
@@ -135,3 +141,5 @@
 (define-key org-mode-map (kbd "C-c a") 'org-agenda)
 (org-defkey org-mode-map (kbd "C-c t") 'org-todo)
 ;;(define-key org-mode-map (kbd "C-c b") 'org-iswitchb)
+
+;;; orgmode-pack ends here
