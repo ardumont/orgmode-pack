@@ -4,8 +4,7 @@
 
 ;;; Code:
 
-(install-packs '(;; as i developed org-trello, i have systematic problems when developing so remove it
-                 ;;                  org-trello
+(install-packs '(;; org-trello ; I have problems when developing org-trello
                  org))
 
 (require 'org)
