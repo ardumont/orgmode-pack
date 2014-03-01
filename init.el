@@ -137,10 +137,20 @@
 
 (add-hook 'org-mode-hook 'ac-latex-mode-setup)
 
-(define-key org-mode-map (kbd "C-c c") 'org-capture)
-(define-key org-mode-map (kbd "C-c l") 'org-store-link)
-(define-key org-mode-map (kbd "C-c a") 'org-agenda)
-(org-defkey org-mode-map (kbd "C-c t") 'org-todo)
-;;(define-key org-mode-map (kbd "C-c b") 'org-iswitchb)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (define-key org-mode-map (kbd "C-c c") 'org-capture)
+            (define-key org-mode-map (kbd "C-c l") 'org-store-link)
+            (define-key org-mode-map (kbd "C-c a") 'org-agenda)
+            (org-defkey org-mode-map (kbd "C-c t") 'org-todo)
+            ;;(define-key org-mode-map (kbd "C-c b") 'org-iswitchb)
+
+            ;; org-mode
+            (define-key org-mode-map (kbd "C-M-f") 'org-metadown)
+            (define-key org-mode-map (kbd "C-M-b") 'org-metaup)
+            (define-key org-mode-map (kbd "C-M-l") 'org-shiftright)
+            (define-key org-mode-map (kbd "C-M-j") 'org-shiftleft)
+            (define-key org-mode-map (kbd "C-M-i") 'org-shiftup)
+            (define-key org-mode-map (kbd "C-M-k") 'org-shiftdown)))
 
 ;;; orgmode-pack ends here
