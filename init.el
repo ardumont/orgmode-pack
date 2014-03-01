@@ -115,8 +115,10 @@
 (defadvice kill-whole-line (after fix-cookies activate)
   (myorg-update-parent-cookie))
 
-;; deactivate git-gutter-mode when in org-mode
-(add-hook 'org-mode-hook (lambda () (git-gutter-mode 0)))
+;; deactivate git-gutter-mode if git-gutter activated in org-mode
+(add-hook 'org-mode-hook (lambda () (and (fboundp 'git-gutter-mode)
+                                         git-gutter-mode
+                                         (git-gutter-mode 0))))
 
 ;;;;;;;;; Math setup
 
