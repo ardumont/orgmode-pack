@@ -4,8 +4,7 @@
 
 ;;; Code:
 
-(install-packs '(;; org-trello ; I have problems when developing org-trello
-                 org
+(install-packs '(org
                  ac-math))
 
 (require 'org)
