@@ -1,5 +1,0 @@
-(define-key org-mode-map (kbd "C-c c") 'org-capture)
-(define-key org-mode-map (kbd "C-c l") 'org-store-link)
-(define-key org-mode-map (kbd "C-c a") 'org-agenda)
-(org-defkey org-mode-map (kbd "C-c t") 'org-todo)
-;;(define-key org-mode-map (kbd "C-c b") 'org-iswitchb)
