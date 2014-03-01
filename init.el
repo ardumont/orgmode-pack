@@ -5,7 +5,8 @@
 ;;; Code:
 
 (install-packs '(;; org-trello ; I have problems when developing org-trello
-                 org))
+                 org
+                 ac-math))
 
 (require 'org)
 
@@ -123,8 +124,6 @@
 ;;;;;;;;; Math setup
 
 ;; there is trouble with the standard install so I use directly emacs-live's native api
-(live-add-pack-lib "ac-math.el")
-
 (require 'ac-math)
 
 ;; adding the auto-complete mode to org
