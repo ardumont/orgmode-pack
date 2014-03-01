@@ -6,7 +6,7 @@
 
 (install-packs '(;; as i developed org-trello, i have systematic problems when developing so remove it
                  ;;                  org-trello
-                 ))
+                 org))
 
 (require 'org)
 
