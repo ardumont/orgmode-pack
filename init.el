@@ -5,7 +5,11 @@
 ;;; Code:
 
 (install-packs '(org
-                 ac-math))
+                 ac-math
+                 smartscan))
+
+(require 'smartscan)
+(add-hook 'org-mode-hook (lambda () (smartscan-mode)))
 
 (require 'org)
 
