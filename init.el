@@ -6,11 +6,7 @@
 
 (install-packs '(org
                  ac-math
-                 smartscan
-                 ox-reveal))
-
-(require 'ox-reveal)
-(setq org-reveal-root (format "file://%s" (expand-file-name "./resources/reveal.js-2.6.1")))
+                 smartscan))
 
 (require 'smartscan)
 (add-hook 'org-mode-hook (lambda () (smartscan-mode)))
