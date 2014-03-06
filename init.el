@@ -1,4 +1,4 @@
-;;; orgmode-pack.el --- org-mode configuration
+;;; orgmode-pack.el --- org-mode configuration (todo with org, slide presentation, etc...)
 
 ;;; Commentary:
 
@@ -6,7 +6,11 @@
 
 (install-packs '(org
                  ac-math
-                 smartscan))
+                 smartscan
+                 ox-reveal))
+
+(require 'ox-reveal)
+(setq org-reveal-root (format "file://%s" (expand-file-name "./resources/reveal.js-2.6.1")))
 
 (require 'smartscan)
 (add-hook 'org-mode-hook (lambda () (smartscan-mode)))
