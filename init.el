@@ -141,11 +141,16 @@
 
 (add-hook 'org-mode-hook
           (lambda ()
-            (define-key org-mode-map (kbd "C-c c") 'org-capture)
-            (define-key org-mode-map (kbd "C-c l") 'org-store-link)
-            (define-key org-mode-map (kbd "C-c a") 'org-agenda)
-            (define-key org-mode-map (kbd "C-c t") 'org-todo)
-            ;;(define-key org-mode-map (kbd "C-c b") 'org-iswitchb)
+            (global-unset-key (kbd "C-c o c"))
+            (global-unset-key (kbd "C-c o l"))
+            (global-unset-key (kbd "C-c o a"))
+            (global-unset-key (kbd "C-c o t"))
+
+            (define-key org-mode-map (kbd "C-c o c") 'org-capture)
+            (define-key org-mode-map (kbd "C-c o l") 'org-store-link)
+            (define-key org-mode-map (kbd "C-c o a") 'org-agenda)
+            (define-key org-mode-map (kbd "C-c o t") 'org-todo)
+            (define-key org-mode-map (kbd "C-c o b") 'org-iswitchb)
 
             ;; org-mode
             (define-key org-mode-map (kbd "C-M-f") 'org-metadown)
