@@ -142,6 +142,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (global-unset-key (kbd "C-c o"))
+            (global-unset-key (kbd "C-c t"))
             (global-unset-key (kbd "C-c o c"))
             (global-unset-key (kbd "C-c o l"))
             (global-unset-key (kbd "C-c o a"))
