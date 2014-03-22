@@ -162,4 +162,8 @@
             (define-key org-mode-map (kbd "C-M-i") 'org-shiftup)
             (define-key org-mode-map (kbd "C-M-k") 'org-shiftdown)))
 
+(unless (require 'org-trello nil t)
+  (add-hook 'org-trello-mode-hook (lambda () (org-trello/install-local-prefix-mode-keybinding! "C-c x"))))
+
+
 ;;; orgmode-pack ends here
