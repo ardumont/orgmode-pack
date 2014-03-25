@@ -164,9 +164,8 @@
 
 (when (require 'org-trello nil t)
   (add-hook 'org-trello-mode-hook (lambda ()
-                                    (let ((prefix-binding "C-c x"))
+                                    (let ((prefix-binding "C-c z"))
                                       (org-trello/install-local-prefix-mode-keybinding! prefix-binding)
-                                      (define-key org-trello-mode-map (kbd (format prefix-binding "r")) 'org-trello/dev-load-namespaces)))))
-
+                                      (define-key org-trello-mode-map (kbd (format "%s%s" prefix-binding " r")) 'org-trello/dev-load-namespaces)))))
 
 ;;; orgmode-pack ends here
