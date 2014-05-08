@@ -170,5 +170,4 @@
                                       (define-key org-trello-mode-map (kbd (format "%s%s" prefix-binding " r")) 'org-trello/dev-load-namespaces)))))
 
 (provide 'orgmode-pack)
-
 ;;; orgmode-pack ends here
