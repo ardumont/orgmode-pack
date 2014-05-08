@@ -4,6 +4,7 @@
 
 ;;; Code:
 
+(require 'install-packages-pack)
 (install-packs '(org
                  ac-math
                  smartscan))
@@ -167,5 +168,7 @@
                                     (let ((prefix-binding "C-c z"))
                                       (org-trello/install-local-prefix-mode-keybinding! prefix-binding)
                                       (define-key org-trello-mode-map (kbd (format "%s%s" prefix-binding " r")) 'org-trello/dev-load-namespaces)))))
+
+(provide 'orgmode-pack)
 
 ;;; orgmode-pack ends here
