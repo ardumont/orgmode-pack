@@ -97,17 +97,18 @@
 ;; Be able to reactivate the touchpad for an export html (as my touchpad is deactivated when in emacs)
 
 (defun run-shl (&rest cmd)
-  "A simpler command to run-shell-command with multiple params"
+  "A simpler command CMD to run-shell-command with multiple params."
   (shell-command-to-string (apply #'concatenate 'string cmd)))
 
 (defun toggle-touchpad-manual (status)
-  "Activate/Deactivate the touchpad depending on the status parameter (0/1)."
+  "Activate/Deactivate the touchpad depending on the STATUS parameter (0/1)."
   (run-shl "toggle-touchpad-manual.sh " status))
 
 (add-hook 'org-export-html-final-hook
           (lambda () (toggle-touchpad-manual "1")))
 
 (defun myorg-update-parent-cookie ()
+  "Update statistic."
   (when (equal major-mode 'org-mode)
     (save-excursion
       (ignore-errors
@@ -115,9 +116,11 @@
         (org-update-parent-todo-statistics)))))
 
 (defadvice org-kill-line (after fix-cookies activate)
+  "Add advice around the org-kill-line method."
   (myorg-update-parent-cookie))
 
 (defadvice kill-whole-line (after fix-cookies activate)
+  "Same for kill-whole-line."
   (myorg-update-parent-cookie))
 
 ;; deactivate git-gutter-mode if git-gutter activated in org-mode
