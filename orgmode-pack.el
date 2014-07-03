@@ -162,6 +162,11 @@
             (define-key org-mode-map (kbd "C-M-i") 'org-shiftup)
             (define-key org-mode-map (kbd "C-M-k") 'org-shiftdown)))
 
+(add-hook 'org-mode-hook
+          (lambda ()
+            ;; deactivate whitespace mode on org buffer
+            (and (fboundp 'whitespace-mode) (whitespace-mode -1))))
+
 (when (require 'org-trello nil t)
   (add-hook 'org-trello-mode-hook (lambda ()
                                     (let ((prefix-binding "C-c z"))
