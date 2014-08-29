@@ -7,7 +7,8 @@
 (require 'install-packages-pack)
 (install-packs '(org
                  ac-math
-                 smartscan))
+                 smartscan
+                 git-gutter))
 
 (require 'smartscan)
 (add-hook 'org-mode-hook (lambda () (smartscan-mode)))
@@ -120,10 +121,8 @@
   "Same for kill-whole-line."
   (myorg-update-parent-cookie))
 
-;; deactivate git-gutter-mode if git-gutter activated in org-mode
-(add-hook 'org-mode-hook (lambda () (and (fboundp 'git-gutter-mode)
-                                         git-gutter-mode
-                                         (git-gutter-mode 0))))
+(require 'git-gutter)
+(add-to-list 'git-gutter:disabled-modes 'org-mode) ;; deactivate git-gutter in org-mode
 
 ;;;;;;;;; Math setup
 
