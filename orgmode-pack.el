@@ -106,7 +106,7 @@
           (lambda () (toggle-touchpad-manual "1")))
 
 (defun myorg-update-parent-cookie ()
-  "Update statistic."
+  "Update Org-mode statistics."
   (when (equal major-mode 'org-mode)
     (save-excursion
       (ignore-errors
@@ -118,7 +118,10 @@
   (myorg-update-parent-cookie))
 
 (defadvice kill-whole-line (after fix-cookies activate)
-  "Same for kill-whole-line."
+  "Same for `kill-whole-line`.
+AFTER killing whole line, update the org-mode's current statistics.
+FIX-COOKIES.
+ACTIVATE."
   (myorg-update-parent-cookie))
 
 (require 'git-gutter)
