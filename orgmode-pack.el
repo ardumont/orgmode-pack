@@ -5,9 +5,9 @@
 ;;; Code:
 
 (require 'install-packages-pack)
-(install-packs '(org
-                 ac-math
-                 smartscan))
+(install-packages-pack/install-packs '(org
+                                       ac-math
+                                       smartscan))
 
 (require 'smartscan)
 (add-hook 'org-mode-hook (lambda () (smartscan-mode)))
