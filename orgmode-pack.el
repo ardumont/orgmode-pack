@@ -7,7 +7,14 @@
 (require 'install-packages-pack)
 (install-packages-pack/install-packs '(org
                                        ac-math
-                                       smartscan))
+                                       smartscan
+                                       org-toc))
+
+(eval-after-load "org-toc-autoloads"
+  '(progn
+     (if (require 'org-toc nil t)
+         (add-hook 'org-mode-hook 'org-toc-enable)
+       (warn "org-toc not found"))))
 
 (require 'smartscan)
 (add-hook 'org-mode-hook (lambda () (smartscan-mode)))
