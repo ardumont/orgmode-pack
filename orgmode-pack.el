@@ -57,7 +57,8 @@
                       ("common-lisp" . ?C)
                       ("haskell"     . ?H)
                       ("scala"       . ?s)
-                      ("devops"      . ?d)))
+                      ("devops"      . ?d)
+                      ("TOC"         . ?T))) ;; for org-toc
 
 ;; keywords sequence for org-mode
 (setq org-todo-keywords
