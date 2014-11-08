@@ -141,7 +141,8 @@ ACTIVATE."
 ;; adding the auto-complete mode to org
 (add-to-list 'ac-modes 'org-mode)
 
-(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
+(defun ac-latex-mode-setup ()
+  "Add ac-sources to default ac-sources."
   (setq ac-sources
         (append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
                 ac-sources)))
