@@ -9,13 +9,11 @@
                                        ac-math
                                        smartscan
                                        org-toc))
-
+(require 'ert)
 (eval-after-load "org-toc-autoloads"
   '(progn
      (if (require 'org-toc nil t)
-         (progn
-           (require 'ert)
-           (add-hook 'org-mode-hook 'org-toc-enable))
+         (add-hook 'org-mode-hook 'org-toc-enable)
        (warn "org-toc not found"))))
 
 (require 'smartscan)
