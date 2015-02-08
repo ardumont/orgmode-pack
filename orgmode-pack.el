@@ -178,7 +178,7 @@ ACTIVATE."
 (when (require 'org-trello nil t)
   (add-hook 'org-trello-mode-hook (lambda ()
                                     (let ((prefix-binding "C-c z"))
-                                      (org-trello/install-local-prefix-mode-keybinding! prefix-binding)
+                                      (orgtrello-setup/install-local-prefix-mode-keybinding! prefix-binding)
                                       (define-key org-trello-mode-map (kbd (format "%s%s" prefix-binding " r")) 'org-trello/dev-load-namespaces)))))
 
 (provide 'orgmode-pack)
