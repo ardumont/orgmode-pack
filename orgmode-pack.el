@@ -181,5 +181,14 @@ ACTIVATE."
                                       (orgtrello-setup/install-local-prefix-mode-keybinding! prefix-binding)
                                       (define-key org-trello-mode-map (kbd (format "%s%s" prefix-binding " r")) 'org-trello/dev-load-namespaces)))))
 
+(use-package org-contacts
+  :config
+  (add-to-list 'org-capture-templates
+               '("c" "Contacts" entry (file "~/.contacts/org-contacts.org")
+                 "* %(org-contacts-template-name)
+:PROPERTIES:
+:EMAIL: %(org-contacts-template-email)
+:END:")))
+
 (provide 'orgmode-pack)
 ;;; orgmode-pack ends here
