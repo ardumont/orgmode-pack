@@ -20,6 +20,10 @@
 (require 'smartscan)
 (add-hook 'org-mode-hook (lambda () (smartscan-mode)))
 
+(add-hook 'org-mode-hook (lambda ()
+                           (when (require 'whitespace nil t)
+                             (whitespace-turn-off))))
+
 (require 'org)
 
 ;; Some org-mode setup
