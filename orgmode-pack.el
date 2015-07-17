@@ -9,6 +9,7 @@
                                        ac-math
                                        smartscan
                                        toc-org))
+
 (require 'ert)
 (eval-after-load "toc-org-autoloads"
   '(progn
