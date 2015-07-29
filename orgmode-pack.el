@@ -4,27 +4,20 @@
 
 ;;; Code:
 
-(require 'install-packages-pack)
-(install-packages-pack/install-packs '(org
-                                       ac-math
-                                       smartscan
-                                       toc-org))
+(use-package ac-math)
+(use-package ert)
+(use-package smartscan)
+(use-package whitespace)
 
-(require 'ert)
-(eval-after-load "toc-org-autoloads"
-  '(progn
-     (if (require 'toc-org nil t)
-         (add-hook 'org-mode-hook 'toc-org-enable)
-       (warn "toc-org not found"))))
+(use-package toc-org
+  :config (add-hook 'org-mode-hook 'toc-org-enable))
 
-(require 'smartscan)
-(add-hook 'org-mode-hook (lambda () (smartscan-mode)))
-
-(add-hook 'org-mode-hook (lambda ()
-                           (when (require 'whitespace nil t)
-                             (whitespace-turn-off))))
-
-(require 'org)
+(use-package org
+  :config
+  (add-hook 'org-mode-hook (lambda () (smartscan-mode)))
+  (add-hook 'org-mode-hook (lambda ()
+                             (when (require 'whitespace nil t)
+                               (whitespace-turn-off)))))
 
 ;; Some org-mode setup
 
@@ -175,10 +168,6 @@ ACTIVATE."
             (define-key org-mode-map (kbd "C-M-i") 'org-shiftup)
             (define-key org-mode-map (kbd "C-M-k") 'org-shiftdown)))
 
-(add-hook 'org-mode-hook
-          (lambda ()
-            ;; deactivate whitespace mode on org buffer
-            (and (fboundp 'whitespace-mode) (whitespace-mode -1))))
 
 (when (require 'org-trello nil t)
   (add-hook 'org-trello-mode-hook (lambda ()
