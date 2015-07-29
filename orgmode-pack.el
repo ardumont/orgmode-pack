@@ -195,5 +195,10 @@ ACTIVATE."
 :EMAIL: %(org-contacts-template-email)
 :END:")))
 
+(require 'org-protocol)
+(add-to-list 'org-capture-templates
+             '("x" "org-protocol" entry (file "~/org/todo.org")
+               "* TODO Review %c\n%U\n%i\n" :immediate-finish))
+
 (provide 'orgmode-pack)
 ;;; orgmode-pack ends here
