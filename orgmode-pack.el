@@ -155,7 +155,29 @@ ACTIVATE."
 
   (add-to-list 'auto-mode-alist '("\.org$"  . org-mode))
   (add-to-list 'auto-mode-alist '("\.todo$" . org-mode))
-  (add-to-list 'auto-mode-alist '("\.note$" . org-mode)))
+  (add-to-list 'auto-mode-alist '("\.note$" . org-mode))
+
+  (defcustom orgmode-pack-yt-html-iframe-width 440 "Width for the youtube's iframe.")
+  (defcustom orgmode-pack-yt-html-iframe-height 335 "Height for the youtube's iframe.")
+  (defconst orgmode-pack-yt-html-iframe-format
+    "<iframe width=\"%s\" height=\"%s\" src=\"https://www.youtube.com/embed/%s\" frameborder=\"0\" allowfullscreen>%s</iframe>")
+  (defconst orgmode-pack-yt-latex-iframe-format
+    "\href{%s}{%s}")
+
+  (org-add-link-type "yt"
+                     (lambda (handle)
+                       (browse-url (concat "https://www.youtube.com/embed/" handle)))
+                     (lambda (path desc backend)
+                       (cl-case backend
+                         (html (format orgmode-pack-yt-html-iframe-format
+                                       orgmode-pack-yt-html-iframe-width
+                                       orgmode-pack-yt-html-iframe-height
+                                       path
+                                       (or desc "")))
+                         (latex (format orgmode-pack-yt-latex-iframe-format
+                                        path (or desc "video")))))))
+
+
 
 (use-package toc-org
   :config (add-hook 'org-mode-hook 'toc-org-enable))
