@@ -8,6 +8,7 @@
 (use-package ert)
 (use-package smartscan)
 (use-package whitespace)
+(use-package dash-functional)
 
 (use-package org
   :config
