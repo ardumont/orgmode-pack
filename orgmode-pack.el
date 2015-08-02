@@ -53,11 +53,9 @@
                             ("CANCELLED"   . shadow)))
                         '(org-fontify-done-headline t))
 
-  (when (require 'org-trello nil t)
-    (add-hook 'org-trello-mode-hook (lambda ()
-                                      (let ((prefix-binding "C-c z"))
-                                        (orgtrello-setup/install-local-prefix-mode-keybinding! prefix-binding)
-                                        (define-key org-trello-mode-map (kbd (format "%s%s" prefix-binding " r")) 'org-trello/dev-load-namespaces)))))
+  (-when-let (orgtrello-home (getenv "ORGTRELLO_HOME"))
+    (load-file (concat orgtrello-home "/load-org-trello.el"))
+    (require 'org-trello nil t))
 
   ;; babel
   (org-babel-do-load-languages
