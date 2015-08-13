@@ -54,7 +54,7 @@
                             ("CANCELLED"   . shadow)))
                         '(org-fontify-done-headline t))
 
-  (-when-let (orgtrello-home (getenv "ORGTRELLO_HOME"))
+  (-when-let (orgtrello-home (getenv "ORGTRELLO_HOME"))  ;; as i maintain org-trello, got complicated to use the package
     (load-file (concat orgtrello-home "/load-org-trello.el"))
     (require 'org-trello nil t))
 
@@ -91,14 +91,14 @@
 
   (defadvice org-kill-line (after fix-cookies activate)
     "Add advice around the org-kill-line method."
-    (orgmode-pack/update-parent-cookie))
+    (orgmode-pack-update-parent-cookie))
 
   (defadvice kill-whole-line (after fix-cookies activate)
     "Same for `kill-whole-line`.
 AFTER killing whole line, update the org-mode's current statistics.
 FIX-COOKIES.
 ACTIVATE."
-    (orgmode-pack/update-parent-cookie))
+    (orgmode-pack-update-parent-cookie))
 
 ;;;;;;;;; Math setup
 
@@ -162,8 +162,6 @@ ACTIVATE."
                                        (or desc "")))
                          (latex (format orgmode-pack-yt-latex-iframe-format
                                         path (or desc "video")))))))
-
-
 
 (use-package toc-org
   :config (add-hook 'org-mode-hook 'toc-org-enable))
