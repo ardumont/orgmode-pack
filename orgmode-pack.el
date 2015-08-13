@@ -81,20 +81,7 @@
      ((((class color) (min-colors 16) (background dark))
        (:foreground "LightSalmon" :strike-through t)))))
 
-  ;; Be able to reactivate the touchpad for an export html (as my touchpad is deactivated when in emacs)
-
-  (defun run-shl (&rest cmd)
-    "A simpler command CMD to run-shell-command with multiple params."
-    (shell-command-to-string (apply #'concatenate 'string cmd)))
-
-  (defun toggle-touchpad-manual (status)
-    "Activate/Deactivate the touchpad depending on the STATUS parameter (0/1)."
-    (run-shl "toggle-touchpad-manual.sh " status))
-
-  (add-hook 'org-export-html-final-hook
-            (lambda () (toggle-touchpad-manual "1")))
-
-  (defun orgmode-pack/update-parent-cookie ()
+  (defun orgmode-pack-update-parent-cookie ()
     "Update Org-mode statistics."
     (when (equal major-mode 'org-mode)
       (save-excursion
