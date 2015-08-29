@@ -55,7 +55,7 @@
                         '(org-fontify-done-headline t))
 
   (-when-let (orgtrello-home (getenv "ORGTRELLO_HOME"))  ;; as i maintain org-trello, got complicated to use the package
-    (load-file (concat orgtrello-home "/load-org-trello.el"))
+    (load-file (concat orgtrello-home "/org-trello-tools.el"))
     (require 'org-trello nil t))
 
   (defun orgmode-pack-org-summary-todo (n-done n-not-done)
