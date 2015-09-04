@@ -67,7 +67,6 @@
   (defun orgmode-pack-org-summary-todo (n-done n-not-done)
     "Switch entry to DONE when all subentries are done, to TODO otherwise."
     (let (org-log-done org-log-states);; turn off logging
-      (orgmode-pack-mode-log "done: %s, not-done: %s" n-done n-not-done)
       (org-todo (if (= n-not-done 0) 'done 'previousset))))
 
   (add-hook 'org-after-todo-statistics-hook 'orgmode-pack-org-summary-todo)
