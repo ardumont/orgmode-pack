@@ -54,13 +54,6 @@
                             ("CANCELLED"   . shadow)))
                         '(org-fontify-done-headline t))
 
-  (-when-let (orgtrello-home (or (getenv "ORGTRELLO_HOME")
-                                 "~/repo/perso/org-trello")) ;; as i maintain org-trello, got complicated to use the package
-    (let ((org-trello-tools-file (format "%s/org-trello-tools.el" orgtrello-home)))
-      (when (file-exists-p org-trello-tools-file)
-        (load-file org-trello-tools-file)
-        (require 'org-trello nil t))))
-
   (defun orgmode-pack-mode-log (&rest msg-data)
     "Log MSG-DATA with specific pack prefix."
     (apply #'message (format "Orgmode Pack - %s" (car msg-data)) (cdr msg-data)))
