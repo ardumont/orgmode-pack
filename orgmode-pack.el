@@ -54,7 +54,8 @@
                             ("CANCELLED"   . shadow)))
                         '(org-fontify-done-headline t))
 
-  (-when-let (orgtrello-home (getenv "ORGTRELLO_HOME"))  ;; as i maintain org-trello, got complicated to use the package
+  (-when-let (orgtrello-home (or (getenv "ORGTRELLO_HOME")
+                                 "~/repo/perso/org-trello")) ;; as i maintain org-trello, got complicated to use the package
     (let ((org-trello-tools-file (format "%s/org-trello-tools.el" orgtrello-home)))
       (when (file-exists-p org-trello-tools-file)
         (load-file org-trello-tools-file)
