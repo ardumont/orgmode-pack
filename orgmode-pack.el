@@ -189,5 +189,37 @@ ACTIVATE."
                '("x" "org-protocol" entry (file "~/org/todo.org")
                  "* TODO Review %c\n%U\n%i\n" :immediate-finish)))
 
+(defun org-read-entry-property-name ()
+  "Read a property name from the current entry."
+  (let ((completion-ignore-case t)
+        (default-prop (or (and (org-at-property-p)
+                               (org-match-string-no-properties 2))
+                          org-last-set-property)))
+    (org-completing-read
+     (format "Property [%s]: " (if default-prop default-prop ""))
+     (org-entry-properties nil nil)
+     nil nil nil nil default-prop)))
+
+(defun my-org-region-to-property (&optional property)
+  "Transform a region to an org property.
+PROPERTY can be provided as universal argument."
+  (interactive)
+  ;; if no region is defined, do nothing
+  (if (use-region-p)
+      ;; if a region string is found, ask for a property and set property to
+      ;; the string in the region
+      (let ((val (replace-regexp-in-string
+                  "\\`[ \t\n]*" ""
+                  (replace-regexp-in-string "[ \t\n]*\\'" ""
+                                            (substring (buffer-string)
+                                                       (- (region-beginning) 1)
+                                                       (region-end)))))
+            ;; if none was stated by user, read property from user
+            (prop (or property
+                      (org-read-entry-property-name))))
+
+        ;; set property
+        (org-set-property prop val))))
+
 (provide 'orgmode-pack)
 ;;; orgmode-pack ends here
