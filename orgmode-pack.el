@@ -75,7 +75,6 @@
    (ruby       . t)
    (perl       . t)
    (python     . t)
-   (R          . t)
    (ditaa      . t)
    (lilypond   . t)))
 
