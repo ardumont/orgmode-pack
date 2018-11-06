@@ -79,13 +79,13 @@
    (ditaa      . t)
    (lilypond   . t)))
 
-  (custom-set-faces
-   '(org-done ((t (:foreground "PaleGreen"
-                               :weight normal
-                               :strike-through t))))
-   '(org-headline-done
-     ((((class color) (min-colors 16) (background dark))
-       (:foreground "LightSalmon" :strike-through t)))))
+(custom-set-faces
+ '(org-done ((t (:foreground "PaleGreen"
+                             :weight normal
+                             :strike-through t))))
+ '(org-headline-done
+   ((((class color) (min-colors 16) (background dark))
+     (:foreground "LightSalmon" :strike-through t)))))
 
 (defun orgmode-pack-update-parent-cookie ()
   "Update Org-mode statistics."
