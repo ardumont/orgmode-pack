@@ -168,16 +168,8 @@ ACTIVATE."
 		       (latex (format orgmode-pack-yt-latex-iframe-format
 				      path (or desc "video"))))))
 
-(require 'org-contacts)
 (require 'org-protocol)
-
 (require 'org-capture)
-(add-to-list 'org-capture-templates
-	     '("c" "Contacts" entry (file "~/.contacts/org-contacts.org")
-	       "* %(org-contacts-template-name)
-:PROPERTIES:
-:EMAIL: %(org-contacts-template-email)
-:END:"))
 
 (add-to-list 'org-capture-templates
 	     '("x" "org-protocol" entry (file "~/org/todo.org")
