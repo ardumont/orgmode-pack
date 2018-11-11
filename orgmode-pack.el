@@ -11,12 +11,11 @@
 (require 'dash-functional)
 
 (require 'org)
-(add-hook 'org-mode-hook (lambda ()
-			   (smartscan-mode-turn-on)
-			   (column-number-mode)))
-(add-hook 'org-mode-hook (lambda ()
-			   (when (require 'whitespace nil t)
-			     (whitespace-turn-off))))
+
+(add-hook 'org-mode-hook 'smartscan-mode-turn-on)
+(add-hook 'org-mode-hook 'column-number-mode)
+(add-hook 'org-mode-hook 'whitespace-turn-off)
+
 (custom-set-variables '(org-directory "~/org")
 		      '(org-agenda-files (directory-files org-directory 'absolute-names ".org$" 'nosort))
 		      '(org-startup-indented t)
