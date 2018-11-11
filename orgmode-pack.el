@@ -123,9 +123,6 @@ ACTIVATE."
 
 ;;;;;;;;; Math setup
 
-;; there is trouble with the standard install so I use directly emacs-live's native api
-(require 'ac-math)
-
 ;; adding the auto-complete mode to org
 (add-to-list 'ac-modes 'org-mode)
 
