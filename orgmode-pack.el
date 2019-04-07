@@ -102,6 +102,29 @@
    ((((class color) (min-colors 16) (background dark))
      (:foreground "LightSalmon" :strike-through t)))))
 
+;;;;;;;;; latex
+
+
+;; Hack to remove "grffile" which is not found
+;; package oberdienk exposes it and is installed but i'm lazy right now...
+
+(custom-set-variables
+ '(org-latex-default-packages-alist
+   '(("AUTO" "inputenc"  t ("pdflatex"))
+     ("T1"   "fontenc"   t ("pdflatex"))
+     (""     "graphicx"  t)
+     (""     "longtable" nil)
+     (""     "wrapfig"   nil)
+     (""     "rotating"  nil)
+     ("normalem" "ulem"  t)
+     (""     "amsmath"   t)
+     (""     "textcomp"  t)
+     (""     "amssymb"   t)
+     (""     "capt-of"   nil)
+     (""     "hyperref"  nil))))
+
+;;;;;;;;;;
+
 (defun orgmode-pack-update-parent-cookie ()
   "Update Org-mode statistics."
   (when (equal major-mode 'org-mode)
