@@ -85,7 +85,7 @@
  'org-babel-load-languages
  '((haskell    . t)
    (emacs-lisp . t)
-   (sh         . t)
+   (shell      . t)
    (clojure    . t)
    (java       . t)
    (ruby       . t)
