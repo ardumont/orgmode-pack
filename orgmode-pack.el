@@ -107,8 +107,8 @@
   (when (equal major-mode 'org-mode)
     (save-excursion
       (ignore-errors
-	(org-back-to-heading)
-	(org-update-parent-todo-statistics)))))
+        (org-back-to-heading)
+	    (org-update-parent-todo-statistics)))))
 
 (defadvice org-kill-line (after fix-cookies activate)
   "Add advice around the org-kill-line method."
@@ -129,8 +129,8 @@ ACTIVATE."
 (defun ac-latex-mode-setup ()
   "Add ac-sources to default ac-sources."
   (setq ac-sources
-	(append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
-		ac-sources)))
+	    (append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
+		        ac-sources)))
 
 (add-hook 'org-mode-hook 'ac-latex-mode-setup)
 
